@@ -1,88 +1,33 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<!DOCTYPE html>
 <html>
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2685.4">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
-    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px 'PingFang SC'}
-    span.s1 {font: 12.0px 'PingFang SC'}
-    span.s2 {font: 12.0px 'Apple Color Emoji'}
-    span.s3 {font: 12.0px Helvetica}
-  </style>
+    <meta charset="UTF-8">
+    <title>生日贺卡助手</title>
+    <style>
+        body { font-family: sans-serif; background: #f0f2f5; display: flex; justify-content: center; padding: 50px; }
+        .box { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); width: 350px; }
+        input, select, button { width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ddd; border-radius: 6px; box-sizing: border-box; }
+        button { background: #ff4757; color: white; border: none; cursor: pointer; font-weight: bold; }
+        #output { margin-top: 20px; white-space: pre-wrap; color: #333; line-height: 1.6; }
+    </style>
 </head>
 <body>
-<p class="p1">&lt;!DOCTYPE html&gt;</p>
-<p class="p1">&lt;html lang="zh-CN"&gt;</p>
-<p class="p1">&lt;head&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;AI <span class="s1">生日贺卡助手</span>&lt;/title&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>body { font-family: 'PingFang SC', sans-serif; background: #f4f7f6; display: flex; justify-content: center; padding: 20px; }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.card { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); width: 100%; max-width: 400px; }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>h2 { color: #333; text-align: center; }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.input-group { margin-bottom: 15px; }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>label { display: block; margin-bottom: 5px; color: #666; }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>input, select { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px; box-sizing: border-box; }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>button { width: 100%; padding: 12px; background: #2ecc71; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; margin-top: 10px; }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>button:hover { background: #27ae60; }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>#result { margin-top: 20px; padding: 15px; background: #fff9db; border-left: 5px solid #f1c40f; display: none; white-space: pre-wrap; line-height: 1.6; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
-<p class="p1">&lt;/head&gt;</p>
-<p class="p1">&lt;body&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;div class="card"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;h2&gt;<span class="s2">🎂</span> <span class="s1">贺卡生成器</span>&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="input-group"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;label&gt;<span class="s1">姓名</span>&lt;/label&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;input type="text" id="name" placeholder="<span class="s1">对方的名字</span>"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="input-group"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;label&gt;<span class="s1">性别</span>&lt;/label&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;select id="gender"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;option value="<span class="s1">先生</span>"&gt;<span class="s1">男</span>&lt;/option&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;option value="<span class="s1">女士</span>"&gt;<span class="s1">女</span>&lt;/option&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/select&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="input-group"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;label&gt;<span class="s1">爱好</span>&lt;/label&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;input type="text" id="hobby" placeholder="<span class="s1">例如：摄影、跑步、投资</span>"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;button onclick="generateCard()"&gt;<span class="s1">生成祝词</span>&lt;/button&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="result"&gt;&lt;/div&gt;</p>
-<p class="p1">&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;script&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>function generateCard() {</p>
-<p class="p1"><span class="Apple-converted-space">        </span>const name = document.getElementById('name').value;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>const gender = document.getElementById('gender').value;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>const hobby = document.getElementById('hobby').value;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>const resultDiv = document.getElementById('result');</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>if(!name || !hobby) {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>alert("<span class="s1">请填完所有信息哦！</span>");</p>
-<p class="p1"><span class="Apple-converted-space">            </span>return;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>// <span class="s1">简单的逻辑生成模板</span></p>
-<p class="p1"><span class="Apple-converted-space">        </span>const templates = [</p>
-<p class="p3"><span class="s3"><span class="Apple-converted-space">            </span>`</span>亲爱的<span class="s3"> ${name}${gender}</span>：<span class="s3">\n\n</span>祝你生日快乐！听说你最近沉迷于<span class="s3">${hobby}</span>，希望你在新的一年里，能在这个领域里收获更多快乐与惊喜。愿你的生活像你的爱好一样多姿多彩！<span class="s3">`,</span></p>
-<p class="p3"><span class="s3"><span class="Apple-converted-space">            </span>`</span>致<span class="s3"> ${name}</span>：<span class="s3">\n\n</span>生日快乐！在这个特别的日子里，愿你在<span class="s3">${hobby}</span>的道路上越走越远，遇见更多志同道合的朋友。愿新的一岁，平安喜乐，万事胜意！<span class="s3">`</span></p>
-<p class="p1"><span class="Apple-converted-space">        </span>];</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>const randomText = templates[Math.floor(Math.random() * templates.length)];</p>
-<p class="p1"><span class="Apple-converted-space">        </span>resultDiv.innerText = randomText;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>resultDiv.style.display = 'block';</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1">&lt;/script&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;/body&gt;</p>
-<p class="p1">&lt;/html&gt;</p>
+    <div class="box">
+        <h2>🎂 生日贺卡生成器</h2>
+        <input type="text" id="name" placeholder="对方姓名">
+        <select id="gender"><option value="先生">男</option><option value="女士">女</option></select>
+        <input type="text" id="hobby" placeholder="TA的爱好">
+        <button onclick="make()">点击生成</button>
+        <div id="output"></div>
+    </div>
+    <script>
+        function make() {
+            const n = document.getElementById('name').value;
+            const h = document.getElementById('hobby').value;
+            const g = document.getElementById('gender').value;
+            if(!n || !h) return alert("请填完信息");
+            document.getElementById('output').innerText = `亲爱的${n}${g}：\n祝你生日快乐！愿你在${h}的世界里玩得开心，新的一岁万事如意！`;
+        }
+    </script>
 </body>
 </html>
